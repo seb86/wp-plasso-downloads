@@ -1,0 +1,80 @@
+
+/* The Home Page
+---------------------------------------------------------------------------------------------------- */
+
+.intro {
+	background-color: white;
+	margin-bottom: 100px;
+	.content {
+		padding-top: 60px;
+	}
+	hr {
+		max-width: 200px;
+		border-top: 2px solid $grey6;
+	}
+	h2 { color: $grey3; }
+	h5 { color: $grey4; max-width: 740px; }
+}
+.home {
+	[class*='col-'] {
+		margin-bottom: 60px;
+	}
+	footer {
+		margin-top: 40px;
+	}
+}
+.grid {
+	.product {
+		background-color: white;
+		@include subtle-shadow1;
+		@include transition2;
+		img {
+			width: 100%;
+		}
+		h4 {
+			margin-bottom: 10px;
+		}
+		p {
+			color: $grey4;
+			line-height: 1.7;
+			font-weight: 400;
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+	}
+	.product:hover {
+		@include large-shadow3;
+	}
+}
+
+.product-image {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+	width: 100%;
+
+	display: block;
+
+	padding-top: 100%;
+}
+
+.product-text {
+	padding: 15px 30px 25px;
+}
+
+.product-meta {
+	border-top: 1px solid $grey6;
+	padding-top: 20px;
+	overflow:hidden;
+	.price {
+		float: left;
+		font-weight: 700;
+	}
+	.category {
+		float:right;
+		font-size: 12px;
+		color: $grey4;
+		margin-top: 2px;
+	}
+}

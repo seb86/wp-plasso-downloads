@@ -1,0 +1,79 @@
+
+/* Responsive Styles
+---------------------------------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+    .menu-visible .wrapper {
+        right: 240px;
+    }
+
+    .content {
+    	padding: 60px 20px;
+    }
+
+    .header {
+    	.content {
+    		padding: 30px 20px;
+    	}
+    }
+    .toggle-menu {
+    	margin-top: 8px;
+    }
+
+    .intro {
+    	margin-bottom: 60px;
+    	.content {
+    		padding-top: 30px;
+    		padding-bottom: 60px;
+    	}
+    	h2 {
+    		font-size: 36px;
+    	}
+    	h5 {
+    		font-size: 16px;
+    	}
+    }
+    .index {
+    	[class*='col-'] {
+			margin-bottom: 30px;
+		}
+    }
+
+    .product-images {
+    	width: 100%;
+    	padding: 20px;
+    	margin-bottom: 30px;
+    }
+    .product-info {
+    	width: 100%;
+    	padding: 20px 20px 0;
+    }
+
+    .entry-content {
+    	width: 100%;
+    	padding: 20px;
+    	margin-bottom: 30px;
+    	h1 {
+    		font-size: 36px;
+    	}
+    	.post-meta {
+    		font-size: 12px;
+    		.post-date {
+    			margin-right: 20px;
+    		}
+    	}
+    }
+    .sidebar {
+    	width: 100%;
+    	padding: 20px;
+    }
+    .blog-post {
+    	p {
+    		font-size: 14px;
+    	}
+    }
+}
+
+@media all and (max-width: 768px) {
+
+}

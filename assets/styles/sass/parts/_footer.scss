@@ -1,0 +1,30 @@
+
+/* Footer
+---------------------------------------------------------------------------------------------------- */
+
+footer {
+	background-color: #EEF1F5;
+	color: $grey4;
+	font-size: 12px;
+
+	.content {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		overflow: hidden;
+	}
+
+	p {
+		float: left;
+		margin-top: 10px;
+	}
+
+	ul.social-links {
+		list-style: none;
+		float:right;
+		margin-top: 7px;
+		li {
+			display: inline-block;
+			margin-left: 20px;
+		}
+	}
+}

@@ -1,0 +1,92 @@
+
+/* Variables
+---------------------------------------------------------------------------------------------------- */
+
+$black1: #1A1D20;
+$black2: #2C3136;
+$grey1: #292D34;
+$grey2: #434A54;
+$grey3: #656D78;
+$grey4: #AAB2BD;
+$grey5: #CCD1D9;
+$grey6: #E6E9ED;
+$grey7: #F5F7FA;
+
+$dark-blue: #3BAFDA;
+$blue: #4FC1E9;
+$light-blue: #8ADAF9;
+
+$sans-serif: 'Roboto', sans-serif;
+$meta: 'Montserrat', sans-serif;
+
+$contentwidth: 1120px;
+
+@mixin large-shadow {
+	-webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.1);
+}
+
+@mixin large-shadow2 {
+	-webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+}
+
+@mixin large-shadow3 {
+	-webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
+}
+
+@mixin subtle-shadow1 {
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1);
+}
+
+@mixin subtle-shadow1hover {
+	-webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 1px 20px 0px rgba(0,0,0,0.1);
+}
+
+@mixin subtle-shadow2 {
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+}
+
+@mixin radius2 {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+@mixin radius3 {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+@mixin transition1 {
+	-webkit-transition: all .15s linear;
+	-moz-transition: all .15s linear;
+	-o-transition: all .15s linear;
+	-ms-transition: all .15s linear;
+	transition: all .15s linear;
+}
+
+@mixin transition2 {
+	transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+
+@mixin backgroundcover {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

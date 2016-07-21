@@ -1,0 +1,144 @@
+<?php
+
+/* Theme Support: Titles, etc.
+---------------------------------------------------------------------------------------------------- */
+
+add_theme_support('title-tag');
+add_theme_support('post-thumbnails');
+
+/* Include Works: Customizer, etc.
+---------------------------------------------------------------------------------------------------- */
+
+require_once(get_template_directory() . '/assets/works/customizer.php');
+
+/* Kirki: Including Kirki in this theme.
+---------------------------------------------------------------------------------------------------- */
+
+// Including Kirki
+require_once(get_template_directory() . '/assets/works/vendor/kirki/kirki.php');
+
+// Config Kirki to work from the theme.
+function plasso_kirki_configuration() {
+    return array('url_path' => get_stylesheet_directory_uri() . '/assets/works/vendor/kirki/');
+}
+add_filter('kirki/config', 'plasso_kirki_configuration');
+
+/* ACF: Including Advanced Custom Fields in this theme.
+---------------------------------------------------------------------------------------------------- */
+
+// Custom ACF path.
+add_filter('acf/settings/path', 'pk_acf_settings_path');
+function pk_acf_settings_path($path) {
+    $path = get_template_directory() . '/assets/works/vendor/acf/';
+    return $path;
+}
+
+// Custom ACF directory.
+add_filter('acf/settings/dir', 'pk_acf_settings_dir');
+function pk_acf_settings_dir($dir) {
+    $dir = get_template_directory_uri() . '/assets/works/vendor/acf/';
+    return $dir;
+}
+
+// Hide the ACF admin.
+add_filter('acf/settings/show_admin', '__return_false');
+
+// Include ACF.
+include_once(get_template_directory() . '/assets/works/vendor/acf/acf.php');
+
+// Include ACF fields.
+include_once(get_template_directory() . '/assets/works/custom-fields.php');
+
+/* Remove Menus: Removing unused WordPress menu items and taxonomy features.
+---------------------------------------------------------------------------------------------------- */
+
+function plasso_remove_menus() {
+
+	// Removes unused top level menus.
+	remove_menu_page('edit.php');
+	remove_menu_page('edit-comments.php');
+}
+add_action('admin_menu', 'plasso_remove_menus');
+
+function plasso_remove_customizer_settings($wp_customize){
+
+	// Remove nav menus from the customizer.
+	$wp_customize->remove_panel('nav_menus');
+}
+add_action('customize_register', 'plasso_remove_customizer_settings', 20);
+
+/* Enqueue: Adding styles and scripts.
+---------------------------------------------------------------------------------------------------- */
+
+function plasso_enqueue() {
+
+	// Loads Google Fonts
+	$query_args = array(
+		'family' => 'Roboto:400,300,500,700|Montserrat:400,700'
+	);
+	wp_register_style('plasso_fonts', add_query_arg($query_args, 'https://fonts.googleapis.com/css'), array(), null);
+	wp_enqueue_style('plasso_fonts');
+
+	// Loads site styles
+	wp_enqueue_style('plasso_site', get_template_directory_uri() . '/assets/styles/site-min.css');
+
+	// Loads site scripts
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('plasso_site', get_template_directory_uri() . '/assets/scripts/site-min.js', array('jquery'), '1.0', 'in-footer');
+	wp_enqueue_script('plasso_overlay', 'https://plasso.co/embed/v2/embed.js', array(), null, 'in-footer');
+
+	// Localizes scripts
+	wp_localize_script('plasso_site', 'plassoAjax', array(
+		'ajaxUrl' => admin_url('admin-ajax.php'),
+		'nonce' => wp_create_nonce('plasso-nonce')
+	));
+}
+add_action('wp_enqueue_scripts', 'plasso_enqueue');
+
+/* Products: Register the products post type.
+---------------------------------------------------------------------------------------------------- */
+
+function plasso_post_types() {
+
+    // The "Product" post type.
+    $labels = array(
+        'name' => 'Products',
+        'singular_name' => 'Product',
+        'menu_name' => 'Products',
+        'all_items' => 'All Products',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Product',
+        'edit' => 'Edit',
+        'edit_item' => 'Edit Product',
+        'new_item' => 'New Product',
+        'view' => 'View',
+        'view_item' => 'View Product',
+        'search_items' => 'Search Products',
+        'not_found' => 'No Products Found',
+        'not_found_in_trash' => 'No Products Found in Trash',
+        'parent' => 'Parent Product',
+    );
+
+	// Variables for the "Product" post type.
+    $args = array(
+        'labels' => $labels,
+        'description' => 'Your downloadable products.',
+        'public' => true,
+        'show_ui' => true,
+        'has_archive' => true,
+        'show_in_menu' => true,
+        'exclude_from_search' => false,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        'hierarchical' => false,
+        'rewrite' => array('slug' => 'product', 'with_front' => true),
+        'query_var' => true,
+        'menu_position' => 5,
+        'supports' => array('title'),
+		'taxonomies' => array('post_tag'),
+    );
+    register_post_type('products', $args);
+
+	flush_rewrite_rules();
+}
+add_action('init', 'plasso_post_types');

@@ -1,0 +1,21 @@
+
+// Universals: Get all universal styles.
+
+@import 'universal/normalize';
+@import 'universal/variables';
+@import 'universal/general';
+
+// Vendor: Get all vendor styles.
+
+@import 'vendor/simplegrid';
+@import 'vendor/animate';
+
+// Content: Get all content specific styles.
+
+@import 'parts/message';
+@import 'parts/header';
+@import 'parts/footer';
+@import 'parts/home';
+@import 'parts/page';
+@import 'parts/product';
+@import 'parts/responsive';

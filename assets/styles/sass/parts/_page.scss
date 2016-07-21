@@ -1,0 +1,84 @@
+
+/* Pages
+---------------------------------------------------------------------------------------------------- */
+
+.entry-content {
+	width: 70%;
+	float: left;
+	padding: 30px;
+	background-color: white;
+	@include subtle-shadow1;
+}
+
+.blog-post {
+	h1 {
+		margin-bottom: 30px;
+	}
+
+	.post-meta {
+		font-size: 14px;
+		.post-date {
+			margin-right: 30px;
+		}
+	}
+
+	h2 {
+		margin-bottom: 15px;
+	}
+
+	.post-meta, p, blockquote, img, ul, ol, .tip-bubble, .success-bubble, .warning-bubble, .attention-bubble {
+		margin-bottom: 30px;
+	}
+	p, blockquote {
+		line-height: 1.8;
+	}
+
+	img {
+		width: 100%;
+		max-width: 800px;
+	}
+
+	ul, ol {
+		background-color: $grey7;
+		padding: 30px 30px 30px 50px;
+		li {
+			padding-bottom: 15px;
+			border-bottom: 1px solid $grey6;
+			margin-bottom: 15px;
+			line-height: 1.5;
+		}
+		li:last-child {
+			padding:0;
+			border:0;
+			margin:0;
+		}
+	}
+	.post-tags {
+		font-size: 14px;
+		line-height: 1.7;
+	}
+}
+
+.sidebar {
+	width: 26%;
+	padding: 30px;
+	float: right;
+	font-size: 14px;
+	background-color: white;
+	@include subtle-shadow1;
+	.btn {
+		width: 100%;
+		font-size: 16px;
+		letter-spacing: 2px;
+		margin-bottom: 10px;
+	}
+	h2 {
+		font-size: 18px;
+		font-weight: 400;
+		margin-bottom: 20px;
+	}
+	p {
+		margin-top: 20px;
+		line-height: 1.5;
+	}
+}
