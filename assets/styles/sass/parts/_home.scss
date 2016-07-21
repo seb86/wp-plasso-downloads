@@ -15,12 +15,19 @@
 	h2 { color: $grey3; }
 	h5 { color: $grey4; max-width: 740px; }
 }
-.home {
+.home,
+.archive {
 	[class*='col-'] {
 		margin-bottom: 60px;
 	}
 	footer {
 		margin-top: 40px;
+	}
+}
+
+.archive {
+	.header {
+		margin-bottom: 100px;
 	}
 }
 .grid {

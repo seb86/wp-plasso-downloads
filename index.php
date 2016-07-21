@@ -56,8 +56,13 @@
             <?php
 
             // If Home: Get the home page content if we’re home.
-            if(is_home() || is_archive()) {
+            if(is_home()) {
                 get_template_part('content-home');
+            }
+
+            // If Home: Get the home page content if we’re home.
+            if(is_tag()) {
+                get_template_part('content-tag');
             }
 
             // If Page: Get the page content if we’re on a page.
