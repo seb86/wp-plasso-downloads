@@ -5,10 +5,8 @@
 	<div class="col-1-3">
     	<a href="<?php the_permalink(); ?>">
     		<div class="product">
-                <?php $product_images = get_field('product_images'); if($product_images): ?>
-                <div class="product-image" style="background-image: url(<?php echo $product_images[0]['sizes']['large']; ?>);">
+                <div class="product-image" style="background-image: url(<?php the_field('product_image'); ?>);">
                 </div>
-                <?php endif; ?>
 
         		<div class="product-text">
         			<h4><?php the_title(); ?></h4>
