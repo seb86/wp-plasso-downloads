@@ -55,7 +55,6 @@ include_once(get_template_directory() . '/assets/works/custom-fields.php');
 function plasso_remove_menus() {
 
 	// Removes unused top level menus.
-	remove_menu_page('edit.php');
 	remove_menu_page('edit-comments.php');
 }
 add_action('admin_menu', 'plasso_remove_menus');
@@ -157,3 +156,11 @@ function plasso_post_types_tax($query) {
     }
 }
 add_filter('pre_get_posts', 'plasso_post_types_tax');
+
+/* Taxonomies: Remove tags from standard posts.
+---------------------------------------------------------------------------------------------------- */
+
+function plasso_unregister_tags() {
+    unregister_taxonomy_for_object_type('post_tag', 'post');
+}
+add_action('init', 'plasso_unregister_tags');
