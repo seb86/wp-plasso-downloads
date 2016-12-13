@@ -77,7 +77,7 @@ acf_add_local_field_group(array (
 			'label' => 'Space ID',
 			'name' => 'product_space_id',
 			'type' => 'text',
-			'instructions' => 'You’ll find your space ID at the end of your space URL when viewing your space on Plasso.co. For instance, if your space URL is <strong>https://plasso.co/s/zZ2NwPCfyU</strong>, your space ID would be <strong>zZ2NwPCfyU</strong>.',
+			'instructions' => 'You’ll find your space ID at the end of your space URL when viewing your space on Plasso.com. For instance, if your space URL is <strong>https://plasso.com/s/zZ2NwPCfyU</strong>, your space ID would be <strong>zZ2NwPCfyU</strong>.',
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array (

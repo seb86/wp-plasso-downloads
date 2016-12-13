@@ -1,69 +1,68 @@
 /* Scripts */
-
 // set up namespace
 var ab = ab || {};
-jQuery(document).ready(function( $ ) {
-$(function () {
+jQuery(document).ready(function($) {
+  $(function() {
     'use strict';
-  
+
     // Mobile menu toggle functionality
-    ab.mobileMenu = (function () {
+    ab.mobileMenu = (function() {
       'use strict';
 
       var init = function() {
 
-         /*** 
-          * Run this code when the .toggle-menu link has been tapped
-          * or clicked
-          */
-         $( '.toggle-menu' ).on( 'touchstart click', function(e) {
+        /***
+         * Run this code when the .toggle-menu link has been tapped
+         * or clicked
+         */
+        $('.toggle-menu').on('touchstart click', function(e) {
           e.preventDefault();
           $(this).toggleClass("active");
 
-          var $body = $( 'body' ),
-              $page = $( '.wrapper' ),
-              $menu = $( '.mobile-menu' ),
+          var $body = $('body'),
+            $page = $('.wrapper'),
+            $menu = $('.mobile-menu'),
 
-              /* Cross browser support for CSS "transition end" event */
-              transitionEnd = 'transitionend webkitTransitionEnd otransitionend MSTransitionEnd';
+            /* Cross browser support for CSS "transition end" event */
+            transitionEnd = 'transitionend webkitTransitionEnd otransitionend MSTransitionEnd';
 
           /* When the toggle menu link is clicked, animation starts */
-          $body.addClass( 'animating' );
+          $body.addClass('animating');
 
           /***
            * Determine the direction of the animation and
            * add the correct direction class depending
            * on whether the menu was already visible.
            */
-          if ( $body.hasClass( 'menu-visible' ) ) {
-           $body.addClass( 'right' );
+          if ($body.hasClass('menu-visible')) {
+            $body.addClass('right');
           } else {
-           $body.addClass( 'left' );
+            $body.addClass('left');
           }
 
           /***
            * When the animation (technically a CSS transition)
            * has finished, remove all animating classes and
-           * either add or remove the "menu-visible" class 
+           * either add or remove the "menu-visible" class
            * depending whether it was visible or not previously.
            */
-          $page.on( transitionEnd, function() {
-           $body
-            .removeClass( 'animating left right' )
-            .toggleClass( 'menu-visible' );
+          $page.on(transitionEnd, function() {
+            $body
+              .removeClass('animating left right')
+              .toggleClass('menu-visible');
 
-           $page.off( transitionEnd );
-          } );
-         } );     
+            $page.off(transitionEnd);
+          });
+        });
       }
 
       return {
-            init: init
-        };
+        init: init
+      };
 
-    }());   
+    }());
 
     // initialise modules
     ab.mobileMenu.init();
-});
+  });
 });

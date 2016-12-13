@@ -1,17 +1,17 @@
-=== Kirki ===
-Contributors: aristath, fovoc, igmoweb
-Tags: customizer,options framework, theme, mods, toolkit
-Donate link: http://kirki.org/
-Requires at least: 4.4
-Tested up to: 4.6.1
-Stable tag: 2.3.7
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+# Kirki #
+**Contributors:** aristath, fovoc, igmoweb  
+**Tags:** customizer,options framework, theme, mods, toolkit  
+**Donate link:** http://kirki.org/  
+**Requires at least:** 4.4  
+**Tested up to:** 4.6.1  
+**Stable tag:** 2.3.7  
+**License:** GPLv2 or later  
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
 The ultimate toolkit for theme developers using the WordPress Customizer
 
 
-== Description ==
+## Description ##
 
 [![Build Status](https://travis-ci.org/aristath/kirki.svg?branch=master)](https://travis-ci.org/aristath/kirki) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aristath/kirki/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aristath/kirki/?branch=master) [![Code Climate](https://codeclimate.com/github/aristath/kirki/badges/gpa.svg)](https://codeclimate.com/github/aristath/kirki) [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://raw.githubusercontent.com/aristath/kirki/master/LICENSE) [![Join the chat at https://gitter.im/aristath/kirki](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aristath/kirki?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -29,15 +29,15 @@ Add Google Fonts with our typography field, add tooltips to help your users and 
 
 You can find detailed documentation on how to use Kirki on [https://kirki.org](https://kirki.org)
 
-== Installation ==
+## Installation ##
 
 Simply install as a normal WordPress plugin and activate.
 
 If you want to integrate Kirki in your theme or plugin, please read the instructions on [our ducumentation site](https://kirki.org/docs/advanced/integration.html).
 
-== Changelog ==
+## Changelog ##
 
-= 2.3.7 =
+### 2.3.7 ###
 
 October 22, 2016, dev time: 12 hours.
 
@@ -51,7 +51,7 @@ October 22, 2016, dev time: 12 hours.
 * Fix: Properly sanitize `link` and `url` fields.
 * Fix: Automate sanitization for `repeater` fields.
 
-= 2.3.6 =
+### 2.3.6 ###
 
 August 28, 2016, dev time: 3 hours.
 
@@ -63,7 +63,7 @@ August 28, 2016, dev time: 3 hours.
 * Fix: Support `input_attrs` parameter for controls ([#1074](https://github.com/aristath/kirki/issues/1074)).
 * Fix: Outdated Google-Fonts list ([#1091](https://github.com/aristath/kirki/issues/1091)).
 
-= 2.3.5 =
+### 2.3.5 ###
 
 July 2, 2016. dev time: 6 hours.
 
@@ -73,13 +73,13 @@ July 2, 2016. dev time: 6 hours.
 * FIX: Updated google-fonts ([#1041](https://github.com/aristath/kirki/issues/1041)).
 * NEW: Allow simpler format for `variables` argument ([#1020](https://github.com/aristath/kirki/issues/1020)).
 
-= 2.3.4 =
+### 2.3.4 ###
 
 June 1, 2016, dev time: 30 minutes.
 
 * FIX: Repeater JS issues due to error in translation strings.
 
-= 2.3.3 =
+### 2.3.3 ###
 
 May 31, 2016, dev time: 17 hours.
 
@@ -102,7 +102,7 @@ May 31, 2016, dev time: 17 hours.
 * NEW: Allow defining an array of dashicons to use.
 * NEW: Added a `link` control type.
 
-= 2.3.2 =
+### 2.3.2 ###
 
 May 2, 2016, dev time: 52 hours.
 
@@ -121,7 +121,7 @@ May 2, 2016, dev time: 52 hours.
 * FIX: Typography control returns both 'subset' and 'subsets' indexes with the same value ([#948](https://github.com/aristath/kirki/issues/948)).
 * FIX: Use `strict` JS mode in all controls.
 
-= 2.3.1 =
+### 2.3.1 ###
 
 April 19, 2016, dev time: 30 hours.
 
@@ -140,7 +140,7 @@ April 19, 2016, dev time: 30 hours.
 * NEW: Adding mime_type parameter for image, cropped_image, upload controls in repeaters (props @guillaumemolter).
 * NEW: Added color-picker support in repeater fields (props @guillaumemolter).
 
-= 2.3.0 =
+### 2.3.0 ###
 
 April 10, 2016, dev time: 21 hours.
 
@@ -159,16 +159,16 @@ Kirki is now 100% WordPress Coding Standards compliant.
 * NEW: The entire header on repeaters is now draggable - props @guillaumemolter.
 * TWEAK: More efficient JS code for the typography control
 
-= 2.2.10 =
+### 2.2.10 ###
 
 * FIX: Issue with URLs when using Kirki embedded in a theme and not installed as a plugin.
 
-= 2.2.9 =
+### 2.2.9 ###
 
 * FIX: Repeater controls were not working on 2.2.8 due to a typo - props @guillaumemolter
 * NEW: Repeater fields now allow more control types (email/tel/url/hidden) - props @guillaumemolter
 
-= 2.2.8 =
+### 2.2.8 ###
 
 April 6, 2016, dev time: 5 hours.
 
@@ -178,7 +178,7 @@ April 6, 2016, dev time: 5 hours.
 * FIX: Multiselect controls issue with the `sanitize_callback` used.
 * NEW: Make attributes in `cropped_image` sub-controls inside repeaters dynamic (props @guillaumemolter).
 
-= 2.2.7 =
+### 2.2.7 ###
 
 April 5, 2016, dev time: 23 hours.
 
@@ -203,7 +203,7 @@ April 5, 2016, dev time: 23 hours.
 * TWEAK: More inline comments, docs & coding-standards improvements.
 * DEPRECATED: Removed the `Kirki_Colourlovers` class.
 
-= 2.2.6 =
+### 2.2.6 ###
 
 March 26, 2016, dev time: 10 hours
 
@@ -221,7 +221,7 @@ March 26, 2016, dev time: 10 hours
 * NEW: Allow changing the "Add Row" text on repeater fields.
 * NEW: Allow setting a limit for repeater rows.
 
-= 2.2.5 =
+### 2.2.5 ###
 
 March 23, 2016, dev time: 7 hours
 
@@ -233,7 +233,7 @@ March 23, 2016, dev time: 7 hours
 * NEW: Allow passing options to iris using the `choices` argument on color controls.
 * NEW: Allow disabling the custom loader using the `disable_loader` argument in the `kirki/config` filter.
 
-= 2.2.4 =
+### 2.2.4 ###
 
 March 20, 2016, dev time: 6 hours
 
@@ -243,7 +243,7 @@ March 20, 2016, dev time: 6 hours
 * NEW: Added `dashicons` field
 * NEW: Added the ability to limit the number of rows in `repeater` controls (props @fovoc)
 
-= 2.2.3 =
+### 2.2.3 ###
 
 March 19, 2016
 
@@ -251,19 +251,19 @@ March 19, 2016
 * FIX: CSS alignment for descriptions in toggle controls
 * FIX: Default value for letter-spacing setting in typography controls (props @andreg)
 
-= 2.2.2.1 =
+### 2.2.2.1 ###
 
 March 18, 2016, dev time: 5 minutes
 
 * FIX: Backwards-compatibility bugfix
 
-= 2.2.2 =
+### 2.2.2 ###
 
 March 17, 2016, dev time: 10 minutes
 
 * FIX: PHP notice for non-standard controls when the `element` defined in an `output` argument is of type `array`.
 
-= 2.2.1 =
+### 2.2.1 ###
 
 March 17, 2016, dev time: 3 hours
 
@@ -274,7 +274,7 @@ March 17, 2016, dev time: 3 hours
 * FIX: PHP Fatal error when using background-position in the output argument
 * TWEAK: Removed unused languages from CodeMirror to reduce the plugin's size
 
-= 2.2.0 =
+### 2.2.0 ###
 
 March 16, 2016, dev time: 120 hours
 
@@ -309,13 +309,13 @@ March 16, 2016, dev time: 120 hours
 * TWEAK: Other code refactoring for improved performance
 * TWEAK: Updated `grunt` packages.
 
-= 2.1.0.1 =
+### 2.1.0.1 ###
 
 February 17, 2016, dev time: 5 minutes
 
 * FIX: PHP Notices (undefined index)
 
-= 2.1.0 =
+### 2.1.0 ###
 
 February 17, 2016, dev time: 4 hours
 
@@ -327,7 +327,7 @@ February 17, 2016, dev time: 4 hours
 * TWEAK: Color controls styling
 * TWEAK: Coding improvements & cleanups
 
-= 2.0.9 =
+### 2.0.9 ###
 
 February 13, 2016, dev time: 1 hour.
 
@@ -335,7 +335,7 @@ February 13, 2016, dev time: 1 hour.
 * FIX: Checkbox control bug (checkboxes were always displayed as checked, regardless of their actual value)
 * NEW: Intruducing KIRKI_NO_OUTPUT constant that disables CSS output completely when set to true.
 
-= 2.0.8 =
+### 2.0.8 ###
 
 February 10, 2016, dev time: 2 hours
 
@@ -344,7 +344,7 @@ February 10, 2016, dev time: 2 hours
 * NEW: Added radio-image controls to repeaters
 * TWEAK: Better color handling in the Kirki_Color class
 
-= 2.0.7 =
+### 2.0.7 ###
 
 January 19, 2016, dev time: 1 hour
 
@@ -352,7 +352,7 @@ January 19, 2016, dev time: 1 hour
 * FIX: PHP warnings due to invalid callback method
 * FIX: postMessage bug introduced in 2.0.6 (2 lines commented-out)
 
-= 2.0.6 =
+### 2.0.6 ###
 
 January 18, 2016, dev time: 7 hours
 
@@ -365,7 +365,7 @@ January 18, 2016, dev time: 7 hours
 * TWEAK: Settings sanitization
 * TWEAK: Removed demo theme from the plugin. This is now provided separately on https://github.com/aristath/kirki-demo
 
-= 2.0.5 =
+### 2.0.5 ###
 
 December 23, 2015, dev time: 2.5 hours
 
@@ -374,7 +374,7 @@ December 23, 2015, dev time: 2.5 hours
 * FIX: Styling for number controls
 * FIX: In some cases the dynamic CSS was added before the main stylesheet. We now add them using a priority of 999 to ensure they are enqueued afterwards.
 
-= 2.0.4 =
+### 2.0.4 ###
 
 December 19, 2015, dev time: 3 hours
 
@@ -388,26 +388,26 @@ December 19, 2015, dev time: 3 hours
 * FIX: failing PHPUNIT test.
 * TWEAK: Remove passing click event object
 
-= 2.0.3 =
+### 2.0.3 ###
 
 December 6, 2015, dev time: 45 minutes
 
 * Bugfix for updates
 
-= 2.0.2 =
+### 2.0.2 ###
 
 December 6, 2015, dev time: 30 minutes
 
 * FIX: Fatal error on update (not on new installations)
 * FIX: Typo
 
-= 2.0.1 =
+### 2.0.1 ###
 
 December 6, 2015, dev time: 10 minutes
 
 * FIX: Some configurations were failing with the new autoloader. Reverted to a simpler file structure.
 
-= 2.0 =
+### 2.0 ###
 
 December 6, 2015, dev time > 140 hours
 
@@ -455,13 +455,13 @@ December 6, 2015, dev time > 140 hours
 * TWEAK: Grunt integration.
 * TWEAK: Some Code refactoring.
 
-= 1.0.2 =
+### 1.0.2 ###
 
 July 17, 2014, dev time: 5 minutes
 
 * NEW: Added 'disable_output' and 'disable_google_fonts' arguments to the configuration.
 
-= 1.0.1 =
+### 1.0.1 ###
 
 July 17, 2014, dev time: 1 hour
 
@@ -469,7 +469,7 @@ July 17, 2014, dev time: 1 hour
 * FIX: Issues with the `output` argument on fields.
 * FIX: Other minor bugfixes
 
-= 1.0.0 =
+### 1.0.0 ###
 
 July 11, 2014, dev time: 177 hours
 
@@ -520,7 +520,7 @@ July 11, 2014, dev time: 177 hours
 * TWEAK: move the kirki/fields & kirki/controls filters to the new API
 * REMOVED: remove the 'stylesheet_id' from the configuration.
 
-= 0.8.4 =
+### 0.8.4 ###
 
 April 6, 2014, dev time: 0.5 hours
 
@@ -529,7 +529,7 @@ April 6, 2014, dev time: 0.5 hours
 * FIX: Sanitizing more properties in the Fields class
 * FIX: removing remnant double-sanitization calls from the controls classes
 
-= 0.8.3 =
+### 0.8.3 ###
 
 April 5, 2014, dev time: 28 hours
 
@@ -553,19 +553,19 @@ April 5, 2014, dev time: 28 hours
 * NEW: Add a static 'prepare' method to the ScriptRegistry class
 * FIX: Issues with the URL when Kirki is embedded in a theme
 
-= 0.8.2 =
+### 0.8.2 ###
 
 March 30, 2015, dev time: 5 minutes
 
 * FIX: Autoloader could not properly include files due to strtolower()
 
-= 0.8.1 =
+### 0.8.1 ###
 
 March 30, 2015, dev time: 30 minutes
 
 * FIX: Translation strings now overridable using the config filter.
 
-= 0.8.0 =
+### 0.8.0 ###
 
 March 30, 2015, dev time: 32 hours
 
@@ -586,7 +586,7 @@ March 30, 2015, dev time: 32 hours
 * TWEAK: Deprecating the group_title control in favor of the new custom control
 * TWEAK: Changed the CSS for checkboxes
 
-= 0.7.1 =
+### 0.7.1 ###
 
 March 15, 2015, dev time: 2 hours
 
@@ -595,7 +595,7 @@ March 15, 2015, dev time: 2 hours
 * TWEAK: `logo_image` now injects an `img` element instead of a `div` with custom background
 * NEW: Added `description` argument in the kirki configuration (replaces the theme description)
 
-= 0.7 =
+### 0.7 ###
 
 March 14, 2015, dev time: 10 hours
 
@@ -617,7 +617,7 @@ March 14, 2015, dev time: 10 hours
 * TWEAK: Using WordPress core controls instead of custom ones when those are available
 * TWEAK: Separate logic for multiple-type controls that were using the "mode" argument. This has been deprecated in favor of completely separate control types.
 
-= 0.6.2 =
+### 0.6.2 ###
 
 March 2, 2015, dev time: 3 hours
 
@@ -628,14 +628,14 @@ March 2, 2015, dev time: 3 hours
 * FIX: Required script
 * FIX: \'_opacity\' was added to a lot of controls by mistake. Removed it and wrote a migration script.
 
-= 0.6.1 =
+### 0.6.1 ###
 
 February 25, 2015, dev time: 1 hours
 
 * FIX: Sortables controls had a JS conflict
 * FIX: Switches & Toggles were not properly working
 
-= 0.6.0 =
+### 0.6.0 ###
 
 February 25, 2015, dev time: 9 hours
 
@@ -652,14 +652,14 @@ February 25, 2015, dev time: 9 hours
 * FIX: Double output CSS (props @agusmu)
 * NEW: Google fonts now parsed from a json file.
 
-= 0.5.1 =
+### 0.5.1 ###
 
 January 22, 2015
 
 * FIX: Transport defaults to refresh instead of postMessage
 * FIX: undefined index notice.
 
-= 0.5 =
+### 0.5 ###
 
 January 21, 2015
 
@@ -677,7 +677,7 @@ January 21, 2015
 * FIX: Loading order for some files
 * FIX: Removed deprecated less_var argument
 
-= 0.4 =
+### 0.4 ###
 
 October 25, 2014
 
@@ -689,14 +689,14 @@ October 25, 2014
 * FIX: Updating CSS
 * Other minor improvements and bugfixes
 
-= 0.3 =
+### 0.3 ###
 
 May 26, 2014
 
 * NEW: added background field
 * NEW: added \'output\' argument to directly output the CSS
 
-= 0.2 =
+### 0.2 ###
 
 May 9, 2014
 

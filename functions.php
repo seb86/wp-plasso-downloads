@@ -19,7 +19,7 @@ require_once(get_template_directory() . '/assets/works/vendor/kirki/kirki.php');
 
 // Config Kirki to work from the theme.
 function plasso_kirki_configuration() {
-    return array('url_path' => get_stylesheet_directory_uri() . '/assets/works/vendor/kirki/');
+  return array('url_path' => get_stylesheet_directory_uri() . '/assets/works/vendor/kirki/');
 }
 add_filter('kirki/config', 'plasso_kirki_configuration');
 
@@ -29,15 +29,15 @@ add_filter('kirki/config', 'plasso_kirki_configuration');
 // Custom ACF path.
 add_filter('acf/settings/path', 'pk_acf_settings_path');
 function pk_acf_settings_path($path) {
-    $path = get_template_directory() . '/assets/works/vendor/acf/';
-    return $path;
+  $path = get_template_directory() . '/assets/works/vendor/acf/';
+  return $path;
 }
 
 // Custom ACF directory.
 add_filter('acf/settings/dir', 'pk_acf_settings_dir');
 function pk_acf_settings_dir($dir) {
-    $dir = get_template_directory_uri() . '/assets/works/vendor/acf/';
-    return $dir;
+  $dir = get_template_directory_uri() . '/assets/works/vendor/acf/';
+  return $dir;
 }
 
 // Hide the ACF admin.
@@ -63,6 +63,7 @@ function plasso_remove_customizer_settings($wp_customize){
 
 	// Remove nav menus from the customizer.
 	$wp_customize->remove_panel('nav_menus');
+  $wp_customize->remove_section('custom_css');
 }
 add_action('customize_register', 'plasso_remove_customizer_settings', 20);
 
@@ -84,7 +85,7 @@ function plasso_enqueue() {
 	// Loads site scripts
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('plasso_site', get_template_directory_uri() . '/assets/scripts/site-min.js', array('jquery'), '1.0', 'in-footer');
-	wp_enqueue_script('plasso_overlay', 'https://plasso.co/embed/v2/embed.js', array(), null, 'in-footer');
+	wp_enqueue_script('plasso_overlay', 'https://plasso.com/embed/v3/e.js', array(), null, 'in-footer');
 
 	// Localizes scripts
 	wp_localize_script('plasso_site', 'plassoAjax', array(
@@ -99,44 +100,44 @@ add_action('wp_enqueue_scripts', 'plasso_enqueue');
 
 function plasso_post_types() {
 
-    // The "Product" post type.
-    $labels = array(
-        'name' => 'Products',
-        'singular_name' => 'Product',
-        'menu_name' => 'Products',
-        'all_items' => 'All Products',
-        'add_new' => 'Add New',
-        'add_new_item' => 'Add New Product',
-        'edit' => 'Edit',
-        'edit_item' => 'Edit Product',
-        'new_item' => 'New Product',
-        'view' => 'View',
-        'view_item' => 'View Product',
-        'search_items' => 'Search Products',
-        'not_found' => 'No Products Found',
-        'not_found_in_trash' => 'No Products Found in Trash',
-        'parent' => 'Parent Product',
-    );
+  // The "Product" post type.
+  $labels = array(
+    'name' => 'Products',
+    'singular_name' => 'Product',
+    'menu_name' => 'Products',
+    'all_items' => 'All Products',
+    'add_new' => 'Add New',
+    'add_new_item' => 'Add New Product',
+    'edit' => 'Edit',
+    'edit_item' => 'Edit Product',
+    'new_item' => 'New Product',
+    'view' => 'View',
+    'view_item' => 'View Product',
+    'search_items' => 'Search Products',
+    'not_found' => 'No Products Found',
+    'not_found_in_trash' => 'No Products Found in Trash',
+    'parent' => 'Parent Product',
+  );
 
 	// Variables for the "Product" post type.
-    $args = array(
-        'labels' => $labels,
-        'description' => 'Your downloadable products.',
-        'public' => true,
-        'show_ui' => true,
-        'has_archive' => true,
-        'show_in_menu' => true,
-        'exclude_from_search' => false,
-        'capability_type' => 'post',
-        'map_meta_cap' => true,
-        'hierarchical' => false,
-        'rewrite' => array('slug' => 'product', 'with_front' => true),
-        'query_var' => true,
-        'menu_position' => 5,
-        'supports' => array('title'),
-		'taxonomies' => array('post_tag'),
-    );
-    register_post_type('products', $args);
+  $args = array(
+    'labels' => $labels,
+    'description' => 'Your downloadable products.',
+    'public' => true,
+    'show_ui' => true,
+    'has_archive' => true,
+    'show_in_menu' => true,
+    'exclude_from_search' => false,
+    'capability_type' => 'post',
+    'map_meta_cap' => true,
+    'hierarchical' => false,
+    'rewrite' => array('slug' => 'product', 'with_front' => true),
+    'query_var' => true,
+    'menu_position' => 5,
+    'supports' => array('title'),
+	  'taxonomies' => array('post_tag'),
+  );
+  register_post_type('products', $args);
 
 	flush_rewrite_rules();
 }
@@ -146,14 +147,14 @@ add_action('init', 'plasso_post_types');
 ---------------------------------------------------------------------------------------------------- */
 
 function plasso_post_types_tax($query) {
-    if(is_category() || is_tag() && empty( $query->query_vars['suppress_filters'])) {
+  if(is_category() || is_tag() && empty( $query->query_vars['suppress_filters'])) {
 
-        // Get all your post types
-        $post_types = get_post_types();
+    // Get all your post types
+    $post_types = get_post_types();
 
-        $query->set('post_type', $post_types);
-        return $query;
-    }
+    $query->set('post_type', $post_types);
+    return $query;
+  }
 }
 add_filter('pre_get_posts', 'plasso_post_types_tax');
 
@@ -161,6 +162,6 @@ add_filter('pre_get_posts', 'plasso_post_types_tax');
 ---------------------------------------------------------------------------------------------------- */
 
 function plasso_unregister_tags() {
-    unregister_taxonomy_for_object_type('post_tag', 'post');
+  unregister_taxonomy_for_object_type('post_tag', 'post');
 }
 add_action('init', 'plasso_unregister_tags');
