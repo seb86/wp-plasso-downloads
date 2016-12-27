@@ -11,7 +11,7 @@
   <body <?php body_class(); ?>>
   	<?php
 
-  	// Welcome: If nothing has been customized, fet the welcome template.
+  	// Welcome: If nothing has been customized, get the welcome template.
   	if(
       $plasso['header_toggle'] == false &&
       $plasso['intro_toggle'] == false &&

@@ -6,10 +6,30 @@
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails');
 
+
+/* Theme Support: Titles, etc.
+---------------------------------------------------------------------------------------------------- */
+
+function my_error_notice() { ?>
+  <div style="width: 340px; height: 90px; position: fixed; top: 20px; right: 20px; z-index: 100000; padding:10px; border-radius: 45px 6px 6px 45px; background-color: #f44c67; box-shadow: rgba(29, 29, 31, 0.5) 0 5px 40px; box-sizing: border-box;">
+    <div style="width: 70px; height: 70px; float: left; background-color: #ffffff; background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/icon-plasso.png'); background-size: 45px; background-position: center 12px; background-repeat: no-repeat; border-radius: 50%;"></div>
+    <div style="width: 240px; float: left; margin: -2px 0 0 10px;">
+      <h6 style="margin: 0; padding: 0; font-size: 12px; color: #ffffff;">Plasso Plugin Required!</h6>
+      <p style="margin: 0; padding: 0; font-size: 12px; color: #ffffff; opacity: 0.75;">To use this theme, you’ll have to install and activate the Plasso Plugin.</p>
+      <a style="font-size: 12px; color: #ffffff;" href="<?php echo admin_url('plugin-install.php?s=plasso&tab=search&type=term'); ?>">Get the Plasso Plugin</a>
+    </div>
+  </div>
+<?php }
+if(!function_exists('plasso_protect_pages')) {
+  add_action('admin_notices', 'my_error_notice');
+}
+
+
 /* Include Works: Customizer, etc.
 ---------------------------------------------------------------------------------------------------- */
 
 require_once(get_template_directory() . '/assets/works/customizer.php');
+
 
 /* Kirki: Including Kirki in this theme.
 ---------------------------------------------------------------------------------------------------- */
@@ -22,6 +42,7 @@ function plasso_kirki_configuration() {
   return array('url_path' => get_stylesheet_directory_uri() . '/assets/works/vendor/kirki/');
 }
 add_filter('kirki/config', 'plasso_kirki_configuration');
+
 
 /* ACF: Including Advanced Custom Fields in this theme.
 ---------------------------------------------------------------------------------------------------- */
@@ -49,6 +70,7 @@ include_once(get_template_directory() . '/assets/works/vendor/acf/acf.php');
 // Include ACF fields.
 include_once(get_template_directory() . '/assets/works/custom-fields.php');
 
+
 /* Remove Menus: Removing unused WordPress menu items and taxonomy features.
 ---------------------------------------------------------------------------------------------------- */
 
@@ -66,6 +88,7 @@ function plasso_remove_customizer_settings($wp_customize){
   $wp_customize->remove_section('custom_css');
 }
 add_action('customize_register', 'plasso_remove_customizer_settings', 20);
+
 
 /* Enqueue: Adding styles and scripts.
 ---------------------------------------------------------------------------------------------------- */
@@ -85,7 +108,6 @@ function plasso_enqueue() {
 	// Loads site scripts
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('plasso_site', get_template_directory_uri() . '/assets/scripts/site-min.js', array('jquery'), '1.0', 'in-footer');
-	wp_enqueue_script('plasso_overlay', 'https://plasso.com/embed/v3/e.js', array(), null, 'in-footer');
 
 	// Localizes scripts
 	wp_localize_script('plasso_site', 'plassoAjax', array(
@@ -94,6 +116,7 @@ function plasso_enqueue() {
 	));
 }
 add_action('wp_enqueue_scripts', 'plasso_enqueue');
+
 
 /* Products: Register the products post type.
 ---------------------------------------------------------------------------------------------------- */
@@ -143,6 +166,7 @@ function plasso_post_types() {
 }
 add_action('init', 'plasso_post_types');
 
+
 /* Taxonomies: Adding the product post type to tags.
 ---------------------------------------------------------------------------------------------------- */
 
@@ -158,6 +182,7 @@ function plasso_post_types_tax($query) {
 }
 add_filter('pre_get_posts', 'plasso_post_types_tax');
 
+
 /* Taxonomies: Remove tags from standard posts.
 ---------------------------------------------------------------------------------------------------- */
 
@@ -165,3 +190,4 @@ function plasso_unregister_tags() {
   unregister_taxonomy_for_object_type('post_tag', 'post');
 }
 add_action('init', 'plasso_unregister_tags');
+
